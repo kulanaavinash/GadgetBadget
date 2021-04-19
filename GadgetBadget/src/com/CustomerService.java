@@ -53,4 +53,25 @@ public class CustomerService {
 	 return output;
 	 }
 
+	 
+	 
+	 
+	 
+	 @PUT
+	 @Path("/")
+	 @Consumes(MediaType.APPLICATION_JSON)
+	 @Produces(MediaType.TEXT_PLAIN)
+	 public String updateCustomer(String customerData)
+	 {
+	 //Convert the input string to a JSON object
+	  JsonObject customerObject = new JsonParser().parse(customerData).getAsJsonObject();
+	 //Read the values from the JSON object
+	  String CustomerID = customerObject.get("CustomerID").getAsString();
+	  String CustomerName = customerObject.get("CustomerName").getAsString();
+	  String CustomerEmail = customerObject.get("CustomerEmail").getAsString();
+	  String CustomerType= customerObject.get("CustomerType").getAsString();
+	  String CustomerContact = customerObject.get("CustomerContact").getAsString();
+	  String output = customerObj.updateCustomer(CustomerID, CustomerName, CustomerEmail, CustomerType, CustomerContact);
+	 return output;
+	 }
 }

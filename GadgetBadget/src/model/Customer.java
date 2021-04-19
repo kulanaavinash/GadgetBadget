@@ -83,8 +83,6 @@ public class Customer {
 		 String CustomerConatct = rs.getString("CustomerContact");
 		 
 		 
-		 
-		 
 		 // Add into the html table
 		 output += "<tr><td>" + CustomerName + "</td>";
 		 output += "<td>" + CustomerEmail + "</td>";
@@ -101,8 +99,6 @@ public class Customer {
 		 }
 		 con.close();
 		 
-		 
-		 
 		 // Complete the html table
 		 output += "</table>";
 		 }
@@ -113,7 +109,6 @@ public class Customer {
 		 }
 		 return output;
 		 }
-		 
 		public String updateCustomer(String ID, String name, String email, String type, String contact)
 		
 		 {
@@ -148,7 +143,6 @@ public class Customer {
 		 }
 		 return output;
 		 }
-		
 		public String deleteCustomer(String CustomerID)
 		 {
 		 String output = "";
@@ -175,4 +169,3 @@ public class Customer {
 		 return output;
 		 }
 		} 
-		

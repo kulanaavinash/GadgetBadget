@@ -70,6 +70,10 @@ public class Customer {
 				 Connection con = connect();
 				 if (con == null)
 				 {return "Error while connecting to the database for reading."; }
+				 
+				 
+				 // Prepare the html table to be displayed
+				 output = "<table border='1'><tr><th>Customer Name</th><th>Customer Email</th>" + "<th>Customer Type</th>" + "<th>Customer Contact</th>" +  "<th>Update</th><th>Remove</th></tr>";
 
 		
 			

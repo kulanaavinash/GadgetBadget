@@ -83,4 +83,23 @@ public class Customer {
 		 String CustomerConatct = rs.getString("CustomerContact");
 		 
 		 
+		 
+		 
+		 // Add into the html table
+		 output += "<tr><td>" + CustomerName + "</td>";
+		 output += "<td>" + CustomerEmail + "</td>";
+		 output += "<td>" +CustomerType + "</td>";
+		 output += "<td>" + CustomerConatct + "</td>";
+		 
+		 // buttons
+		 
+		 output += "<td><input name='btnUpdate' type='button' value='Update' class='btn btn-secondary'></td>"
+		 + "<td><form method='post' action='items.jsp'>"
+		 + "<input name='btnRemove' type='submit' value='Remove' class='btn btn-danger'>"
+		 + "<input name='CustomerID' type='hidden' value='" + CustomerID
+		 + "'>" + "</form></td></tr>";
+		 }
+		 con.close();
+		 
+		 
 		

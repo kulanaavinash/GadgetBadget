@@ -79,6 +79,15 @@ public class Customer {
 				 Statement stmt = con.createStatement();
 				 ResultSet rs = stmt.executeQuery(query);
 			
+				 // iterate through the rows in the result set
+				 while (rs.next())
+				 {
+				 String CustomerID = Integer.toString(rs.getInt("CustomerID"));
+				 String CustomerName = rs.getString("CustomerName");
+				 String CustomerEmail = rs.getString("CustomerEmail");
+				 String CustomerType  = rs.getString("CustomerType");
+				 String CustomerContact = rs.getString("CustomerContact");
+				 
 		 
 
 

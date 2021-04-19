@@ -41,7 +41,14 @@ public class Customer {
 					PreparedStatement preparedStmt;
 					try {
 						preparedStmt = con.prepareStatement(query);
-							
+						
+						// binding values
+						preparedStmt.setInt(1, 0);
+						preparedStmt.setString(2, name);
+						preparedStmt.setString(3, email);
+						preparedStmt.setString(4, type);
+						preparedStmt.setString(5, contact);
+						
 						
 						preparedStmt.execute();
 						con.close();

@@ -102,4 +102,16 @@ public class Customer {
 		 con.close();
 		 
 		 
+		 
+		 // Complete the html table
+		 output += "</table>";
+		 }
+		 catch (Exception e)
+		 {
+		 output = "Error while reading the items.";
+		 System.err.println(e.getMessage());
+		 }
+		 return output;
+		 }
+		 
 		

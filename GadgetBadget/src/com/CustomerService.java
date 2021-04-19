@@ -38,4 +38,19 @@ public class CustomerService {
 	  return customerObj.readCustomers();
 	  }
 	
+	 
+
+	 @POST
+	 @Path("/")
+	 @Consumes(MediaType.APPLICATION_FORM_URLENCODED)
+	 @Produces(MediaType.TEXT_PLAIN)
+	 public String insertCustomer(@FormParam("CustomerName") String CustomerName,
+	  @FormParam("CustomerEmail") String CustomerEmail,
+	  @FormParam("CustomerType") String CustomerType,
+	  @FormParam("CustomerContact") String CustomerContact)
+	 {
+	  String output = customerObj.insertCustomer(CustomerName, CustomerEmail,CustomerType, CustomerContact);
+	 return output;
+	 }
+
 }

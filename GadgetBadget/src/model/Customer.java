@@ -31,6 +31,30 @@ public class Customer {
 					if (con == null) {
 						return "Error while connecting to the database";
 					}
+					
+					
+					
+					
+					// create a prepared statement
+					String query = " insert into customer (`CustomerID`,`CustomerName`,`CustomerEmail`,`CustomerType`,`CustomerContact`)"
+							+ " values (?, ?, ?, ?, ?)";
+					PreparedStatement preparedStmt;
+					try {
+						preparedStmt = con.prepareStatement(query);
+							
+						
+						preparedStmt.execute();
+						con.close();
+						output = "Inserted successfully";
+					} catch (SQLException e) {
+						output = "Error while inserting";
+						System.err.println(e.getMessage());
+					}
+					
+
+					return output;
 				}
-}
+
+				}
+
 

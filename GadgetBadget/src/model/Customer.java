@@ -75,7 +75,9 @@ public class Customer {
 				 // Prepare the html table to be displayed
 				 output = "<table border='1'><tr><th>Customer Name</th><th>Customer Email</th>" + "<th>Customer Type</th>" + "<th>Customer Contact</th>" +  "<th>Update</th><th>Remove</th></tr>";
 
-		
+				 String query = "select * from customer";
+				 Statement stmt = con.createStatement();
+				 ResultSet rs = stmt.executeQuery(query);
 			
 		 
 

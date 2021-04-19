@@ -74,4 +74,24 @@ public class CustomerService {
 	  String output = customerObj.updateCustomer(CustomerID, CustomerName, CustomerEmail, CustomerType, CustomerContact);
 	 return output;
 	 }
+	 
+	 
+	 @DELETE
+	 @Path("/")
+	 @Consumes(MediaType.APPLICATION_XML)
+	 @Produces(MediaType.TEXT_PLAIN)
+	 public String deleteCustomer(String customerData)
+	 {
+	 //Convert the input string to an XML document
+	  Document doc = Jsoup.parse(customerData, "", Parser.xmlParser());
+
+	 //Read the value from the element <itemID>
+	  String CustomerID = doc.select("CustomerID").text();
+	  String output = customerObj.deleteCustomer(CustomerID);
+	 return output;
+	 }
+
+	 
+	 
 }
+	 

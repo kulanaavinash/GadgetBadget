@@ -86,5 +86,11 @@ public class Payment {
 			 String PaymentType = rs.getString("PaymentType");
 			 
 			 
+			 // Add into the html table
+			 output += "<tr><td>" + PaymentDate + "</td>";
+			 output += "<td>" + CardNumber+ "</td>";
+			 output += "<td>" + Amount + "</td>";
+			 output += "<td>" + PaymentType + "</td>";
 			 
+		 }
 }

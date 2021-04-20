@@ -35,4 +35,19 @@ public class PaymentService {
 	  }
 	 
 	
+	 
+	 
+	 
+	 @POST
+	 @Path("/")
+	 @Consumes(MediaType.APPLICATION_FORM_URLENCODED)
+	 @Produces(MediaType.TEXT_PLAIN)
+	 public String insertPayment(@FormParam("PaymentDate") String PaymentDate,
+	  @FormParam("CardNumber") String CardNumber,
+	  @FormParam("Amount") String Amount,
+	  @FormParam("PaymentType") String PaymentType)
+	 {
+	  String output = paymentObj.insertPayment(PaymentDate,CardNumber,Amount,PaymentType);
+	 return output;
+	 }
 }

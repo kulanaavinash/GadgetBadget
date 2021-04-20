@@ -21,5 +21,15 @@
  <url-pattern>/CustomerService/*</url-pattern>
 </servlet-mapping>
   
+  <servlet>
+ <servlet-name>Jersey Web Application Payment</servlet-name>
+ <servlet-class>com.sun.jersey.spi.container.servlet.ServletContainer</servlet-class>
+ <load-on-startup>1</load-on-startup>
+</servlet>
+<servlet-mapping>
+ <servlet-name>Jersey Web Application Payment</servlet-name>
+ <url-pattern>/PaymentService/*</url-pattern>
+</servlet-mapping>
+  
   
 </web-app>

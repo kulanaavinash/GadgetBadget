@@ -27,16 +27,17 @@ public class Payment {
 	}
 	
 	// insert method
-			public String insertPayment(String date, String number, String amount, String type) {
-				Connection con = connect();
-				String output = "";
-				if (con == null) {
-					return "Error while connecting to the database";
-				}
+	public String insertPayment(String date, String number, String amount, String type) {
+	Connection con = connect();
+	String output = "";
+		if (con == null) {
+			return "Error while connecting to the database";
+			
+		}
 
-				// create a prepared statement
-				String query = " insert into payments (`PaymentID`,`PaymentDate`,`CardNumber`,`Amount`,`PaymentType`)"
-						+ " values (?, ?, ?, ?, ?)";
+		// create a prepared statement
+		String query = " insert into payments (`PaymentID`,`PaymentDate`,`CardNumber`,`Amount`,`PaymentType`)"	+ " values (?, ?, ?, ?, ?)";
+					
 				PreparedStatement preparedStmt;
 				try {
 					preparedStmt = con.prepareStatement(query);
@@ -54,14 +55,14 @@ public class Payment {
 					output = "Error while inserting";
 					System.err.println(e.getMessage());
 				}
-				// binding values
+				
 
 				return output;
 			}
 			
-			public String readPayments()
-			 {
-			 String output = "";
+		public String readPayments()
+		 {
+			String output = "";
 			 try
 			 {
 			 Connection con = connect();
@@ -107,7 +108,7 @@ public class Payment {
 			 }
 			 catch (Exception e)
 			 {
-			 output = "Error while reading the items.";
+			 output = "Error while reading the payment Details.";
 			 System.err.println(e.getMessage());
 			 }
 			 return output;
@@ -123,12 +124,13 @@ public class Payment {
 			 Connection con = connect();
 			 if (con == null)
 			 {return "Error while connecting to the database for updating."; }
-			 // create a prepared statement
+			 
 			 
 			 
 			 String query = " update payments set PaymentDate= ? , CardNumber = ? , Amount = ? , PaymentType = ?  where PaymentID = ? ";
 				
 			 PreparedStatement preparedStmt = con.prepareStatement(query);
+			 
 			 // binding values
 			    preparedStmt.setString(1, date);
 				preparedStmt.setString(2, number);
@@ -143,7 +145,7 @@ public class Payment {
 			 }
 			 catch (Exception e)
 			 {
-			 output = "Error while updating the customer.";
+			 output = "Error while updating the Payment Details.";
 			 System.err.println(e.getMessage());
 			 }
 			 return output;
@@ -161,8 +163,12 @@ public class Payment {
 			 // create a prepared statement
 			 String query = "delete from payments where PaymentID=?";
 			 PreparedStatement preparedStmt = con.prepareStatement(query);
+			 
+			 
 			 // binding values
 			 preparedStmt.setInt(1, Integer.parseInt(PaymentID));
+			 
+			 
 			 // execute the statement
 			 preparedStmt.execute();
 			 con.close();
@@ -170,7 +176,7 @@ public class Payment {
 			 }
 			 catch (Exception e)
 			 {
-			 output = "Error while deleting the payment.";
+			 output = "Error while deleting the payment Details.";
 			 System.err.println(e.getMessage());
 			 }
 			 return output;

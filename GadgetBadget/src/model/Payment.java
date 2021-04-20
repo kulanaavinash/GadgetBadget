@@ -92,5 +92,24 @@ public class Payment {
 			 output += "<td>" + Amount + "</td>";
 			 output += "<td>" + PaymentType + "</td>";
 			 
-		 }
+			 // buttons
+			 
+			 output += "<td><input name='btnUpdate' type='button' value='Update' class='btn btn-secondary'></td>"
+			 + "<td><form method='post' action='items.jsp'>"
+			 + "<input name='btnRemove' type='submit' value='Remove' class='btn btn-danger'>"
+			 + "<input name=' PaymentID' type='hidden' value='" + PaymentID
+			 + "'>" + "</form></td></tr>";
+			 }
+			 con.close();
+			 
+			 // Complete the html table
+			 output += "</table>";
+			 }
+			 catch (Exception e)
+			 {
+			 output = "Error while reading the items.";
+			 System.err.println(e.getMessage());
+			 }
+			 return output;
+			 }
 }

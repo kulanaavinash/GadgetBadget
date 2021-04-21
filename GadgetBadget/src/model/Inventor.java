@@ -133,5 +133,13 @@ public class Inventor {
 			 
 			 String query = " update inventors set InventorName= ? , InventorEmail = ? , InventorContact = ? , InventorType = ?  where InventorID = ? ";
 				
-			
+			 PreparedStatement preparedStmt = con.prepareStatement(query);
+			 
+			 // binding values
+			 preparedStmt.setString(1, name);
+			 preparedStmt.setString(2, email);
+			 preparedStmt.setString(3, contact);
+			 preparedStmt.setString(4, type);
+			 preparedStmt.setInt(5, Integer.parseInt(ID));
+			 
 }

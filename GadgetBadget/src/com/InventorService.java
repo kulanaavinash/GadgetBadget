@@ -1,5 +1,8 @@
 package com;
 
-public class InventorService {
 
+
+public class InventorService {
+	
+	
 }

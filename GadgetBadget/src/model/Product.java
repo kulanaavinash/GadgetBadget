@@ -3,7 +3,9 @@ package model;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 
 public class Product {
 	
@@ -60,5 +62,24 @@ public class Product {
 
 				return output;
 			}
-				
+			
+
+			public String readProducts()
+			 {
+			 String output = "";
+			 try
+			 {
+			 Connection con = connect();
+			 if (con == null)
+			 {return "Error while connecting to the database for reading."; }
+			 // Prepare the html table to be displayed
+			 output = "<table border='1'><tr><th>Product Name</th><th>Product Email</th>" +
+			 "<th>Product Contact</th>" +
+			 "<th>Product Type</th>" +
+			 "<th>Update</th><th>Remove</th></tr>";
+
+			 String query = "select * from products";
+			 Statement stmt = con.createStatement();
+			 ResultSet rs = stmt.executeQuery(query);
+			
 }

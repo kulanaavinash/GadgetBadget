@@ -142,4 +142,18 @@ public class Inventor {
 			 preparedStmt.setString(4, type);
 			 preparedStmt.setInt(5, Integer.parseInt(ID));
 			 
+			 
+			 // execute the statement
+			 preparedStmt.execute();
+			 con.close();
+			 output = "Updated successfully";
+			 }
+			 catch (Exception e)
+			 {
+			 output = "Error while updating the inventor.";
+			 System.err.println(e.getMessage());
+			 }
+			 return output;
+			 }
+			
 }

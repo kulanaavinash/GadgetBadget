@@ -119,4 +119,19 @@ public class Inventor {
 			 return output;
 			 }
 			
+			public String updateInventor(String ID, String name, String email, String contact, String type)
+			
+			 {
+			 String output = "";
+			 try
+			 {
+			 Connection con = connect();
+			 if (con == null)
+			 {return "Error while connecting to the database for updating."; }
+			 // create a prepared statement
+			 
+			 
+			 String query = " update inventors set InventorName= ? , InventorEmail = ? , InventorContact = ? , InventorType = ?  where InventorID = ? ";
+				
+			
 }

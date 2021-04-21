@@ -81,5 +81,16 @@ public class Product {
 			 String query = "select * from products";
 			 Statement stmt = con.createStatement();
 			 ResultSet rs = stmt.executeQuery(query);
-			
+			 
+			 
+			 // iterate through the rows in the result set
+			 while (rs.next())
+			 {
+			 String ProductID = Integer.toString(rs.getInt("ProductID"));
+			 String ProductName = rs.getString("ProductName");
+			 String ProductDate = rs.getString("ProductDate");
+			 String ProductDetails = rs.getString("ProductDetails");
+			 String ProductCategory = rs.getString("ProductCategory");
+			 
+		}
 }

@@ -63,7 +63,7 @@ public class Customer {
 		 {
 		 Connection con = connect();
 		 if (con == null)
-		 {return "Error while connecting to the database for reading."; }
+		 {return "Error while connecting to the database for reading Customers."; }
 		 // Prepare the html table to be displayed
 		 output = "<table border='1'><tr><th>Customer Name</th><th>customer Email</th>" +
 		 "<th>Customer Type</th>" +
@@ -104,7 +104,7 @@ public class Customer {
 		 }
 		 catch (Exception e)
 		 {
-		 output = "Error while reading the items.";
+		 output = "Error while reading the Customers.";
 		 System.err.println(e.getMessage());
 		 }
 		 return output;
@@ -163,7 +163,7 @@ public class Customer {
 		 }
 		 catch (Exception e)
 		 {
-		 output = "Error while deleting the item.";
+		 output = "Error while deleting the Customer.";
 		 System.err.println(e.getMessage());
 		 }
 		 return output;

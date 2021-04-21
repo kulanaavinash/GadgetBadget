@@ -89,5 +89,11 @@ public class Inventor {
 			 String InventorContact = rs.getString("InventorContact");
 			 String InventorType = rs.getString("InventorType");
 			 
+			 // Add into the html table
+			 output += "<tr><td>" + InventorName + "</td>";
+			 output += "<td>" + InventorEmail + "</td>";
+			 output += "<td>" + InventorContact + "</td>";
+			 output += "<td>" + InventorType + "</td>";
+			 
 			
 }

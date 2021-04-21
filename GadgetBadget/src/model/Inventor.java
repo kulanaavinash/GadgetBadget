@@ -3,7 +3,9 @@ package model;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 
 public class Inventor {
 
@@ -58,4 +60,24 @@ public class Inventor {
 
 				return output;
 			}
+
+			public String readInventors()
+			 {
+			 String output = "";
+			 try
+			 {
+			 Connection con = connect();
+			 if (con == null)
+			 {return "Error while connecting to the database for reading."; }
+			 // Prepare the html table to be displayed
+			 output = "<table border='1'><tr><th>Inventor Name</th><th>Inventor Email</th>" +
+			 "<th>Inventor Contact</th>" +
+			 "<th>Inventor Type</th>" +
+			 "<th>Update</th><th>Remove</th></tr>";
+
+			 String query = "select * from inventors";
+			 Statement stmt = con.createStatement();
+			 ResultSet rs = stmt.executeQuery(query);
+			 
+			
 }

@@ -131,4 +131,12 @@ public class FunderService {
 				 String query = " update funders set FunderName= ? , FunderEmail = ? , FunderContact = ? , FunderType = ?  where FunderID = ? ";
 					
 				 PreparedStatement preparedStmt = con.prepareStatement(query);
+				 
+				 
+				 // binding values
+				 preparedStmt.setString(1, name);
+				 preparedStmt.setString(2, email);
+				 preparedStmt.setString(3, contact);
+				 preparedStmt.setString(4, type);
+				 preparedStmt.setInt(5, Integer.parseInt(ID));
 	}

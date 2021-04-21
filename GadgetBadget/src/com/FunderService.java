@@ -22,3 +22,12 @@ public class FunderService {
 		return con;
 
 }
+	// insert method
+				public String insertFunder(String name, String email, String contact, String type) {
+					Connection con = connect();
+					String output = "";
+					if (con == null) {
+						return "Error while connecting to the database";
+					}
+	
+	

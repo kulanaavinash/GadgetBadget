@@ -23,4 +23,12 @@ public class Product {
 		return con;
 
 	}
+	
+			// insert method
+			public String insertProduct(String name, String date, String details, String category) {
+				Connection con = connect();
+				String output = "";
+				if (con == null) {
+					return "Error while connecting to the database";
+				}
 }

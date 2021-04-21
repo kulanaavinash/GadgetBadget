@@ -108,4 +108,53 @@ public class Product {
 			 }
 			 con.close();
 			 
+			 
+			 // Complete the html table
+			 output += "</table>";
+			 }
+			 catch (Exception e)
+			 {
+			 output = "Error while reading the products.";
+			 System.err.println(e.getMessage());
+			 }
+			 return output;
+			 }
+			
+			
+			
+			public String updateProduct(String ID, String name, String date, String details, String category)
+			
+			 {
+			 String output = "";
+			 try
+			 {
+			 Connection con = connect();
+			 if (con == null)
+			 {return "Error while connecting to the database for updating."; }
+			 // create a prepared statement
+			 
+			 
+			 String query = " update products set ProductName= ? , ProductDate = ? , ProductDetails = ? , ProductCategory = ?  where ProductID = ? ";
+				
+			 PreparedStatement preparedStmt = con.prepareStatement(query);
+			 // binding values
+			 preparedStmt.setString(1, name);
+			 preparedStmt.setString(2, date);
+			 preparedStmt.setString(3, details);
+			 preparedStmt.setString(4, category);
+			 preparedStmt.setInt(5, Integer.parseInt(ID));
+			 
+			 // execute the statement
+			 preparedStmt.execute();
+			 con.close();
+			 output = "Updated successfully";
+			 }
+			 catch (Exception e)
+			 {
+			 output = "Error while updating the product.";
+			 System.err.println(e.getMessage());
+			 }
+			 return output;
+			 }
+			
 }

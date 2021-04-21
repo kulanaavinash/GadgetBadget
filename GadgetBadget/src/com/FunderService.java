@@ -3,7 +3,9 @@ package com;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 
 public class FunderService {
 	
@@ -57,4 +59,35 @@ public class FunderService {
 
 					return output;
 				}
-	
+				
+
+				public String readFunder()
+				 {
+				 String output = "";
+				 try
+				 {
+				 Connection con = connect();
+				 if (con == null)
+				 {return "Error while connecting to the database for reading."; }
+				 // Prepare the html table to be displayed
+				 output = "<table border='1'><tr><th>Funder Name</th><th>Funder Email</th>" +
+				 "<th>Funder Contact</th>" +
+				 "<th>Funder Type</th>" +
+				 "<th>Update</th><th>Remove</th></tr>";
+
+				 String query = "select * from funders";
+				 Statement stmt = con.createStatement();
+				 ResultSet rs = stmt.executeQuery(query);
+				 // iterate through the rows in the result set
+				 while (rs.next())
+				 {
+				 String FunderID = Integer.toString(rs.getInt("FunderID"));
+				 String FunderName = rs.getString("FunderName");
+				 String FunderEmail = rs.getString("FunderEmail");
+				 String FunderContact =rs.getString("FunderContact");
+				 String FunderType = rs.getString("FunderType");
+				 
+				 
+				
+
+	}

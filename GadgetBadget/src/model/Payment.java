@@ -59,7 +59,8 @@ public class Payment {
 
 				return output;
 			}
-			
+		
+		//read method
 		public String readPayments()
 		 {
 			String output = "";
@@ -114,7 +115,7 @@ public class Payment {
 			 return output;
 			 }
 			
-
+			//update method
 			public String updatePayment(String ID, String date, String number, String amount, String type)
 			
 			 {
@@ -151,7 +152,7 @@ public class Payment {
 			 return output;
 			 }
 			
-
+			//delete method
 			public String deletePayment(String PaymentID)
 			 {
 			 String output = "";

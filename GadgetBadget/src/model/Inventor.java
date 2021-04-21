@@ -96,4 +96,13 @@ public class Inventor {
 			 output += "<td>" + InventorType + "</td>";
 			 
 			
+			 // buttons
+			 
+			 output += "<td><input name='btnUpdate' type='button' value='Update' class='btn btn-secondary'></td>"
+			 + "<td><form method='post' action='items.jsp'>"
+			 + "<input name='btnRemove' type='submit' value='Remove' class='btn btn-danger'>"
+			 + "<input name='InventorID' type='hidden' value='" + InventorID
+			 + "'>" + "</form></td></tr>";
+			 }
+			 con.close();
 }

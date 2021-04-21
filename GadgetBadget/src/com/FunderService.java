@@ -94,4 +94,13 @@ public class FunderService {
 				 output += "<td>" + FunderType + "</td>";
 				
 
+				 // buttons
+				 
+				 output += "<td><input name='btnUpdate' type='button' value='Update' class='btn btn-secondary'></td>"
+				 + "<td><form method='post' action='funders.jsp'>"
+				 + "<input name='btnRemove' type='submit' value='Remove' class='btn btn-danger'>"
+				 + "<input name='FunderID' type='hidden' value='" + FunderID
+				 + "'>" + "</form></td></tr>";
+				 }
+				 con.close();
 	}

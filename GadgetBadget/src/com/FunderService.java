@@ -87,7 +87,11 @@ public class FunderService {
 				 String FunderContact =rs.getString("FunderContact");
 				 String FunderType = rs.getString("FunderType");
 				 
-				 
+				 // Add into the html table
+				 output += "<tr><td>" + FunderName + "</td>";
+				 output += "<td>" + FunderEmail + "</td>";
+				 output += "<td>" + FunderContact + "</td>";
+				 output += "<td>" + FunderType + "</td>";
 				
 
 	}

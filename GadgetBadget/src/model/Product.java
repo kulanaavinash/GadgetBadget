@@ -98,4 +98,14 @@ public class Product {
 			 output += "<td>" + ProductDetails + "</td>";
 			 output += "<td>" + ProductCategory + "</td>";
 			 
+			 // buttons
+			 
+			 output += "<td><input name='btnUpdate' type='button' value='Update' class='btn btn-secondary'></td>"
+			 + "<td><form method='post' action='items.jsp'>"
+			 + "<input name='btnRemove' type='submit' value='Remove' class='btn btn-danger'>"
+			 + "<input name='ProductID' type='hidden' value='" + ProductID
+			 + "'>" + "</form></td></tr>";
+			 }
+			 con.close();
+			 
 }

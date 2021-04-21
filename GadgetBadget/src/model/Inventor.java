@@ -15,7 +15,7 @@ public class Inventor {
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
 
-			 con= DriverManager.getConnection("jdbc:mysql://localhost:3306/paf_lab_03",
+			 con= DriverManager.getConnection("jdbc:mysql://localhost:3306/gadgetbadget",
 			 "root", "");
 			// For testing
 			System.out.print("Successfully connected");

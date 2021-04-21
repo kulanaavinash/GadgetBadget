@@ -79,5 +79,15 @@ public class Inventor {
 			 Statement stmt = con.createStatement();
 			 ResultSet rs = stmt.executeQuery(query);
 			 
+			 
+			 // iterate through the rows in the result set
+			 while (rs.next())
+			 {
+			 String InventorID = Integer.toString(rs.getInt("InventorID"));
+			 String InventorName = rs.getString("InventorName");
+			 String InventorEmail = rs.getString("InventorEmail");
+			 String InventorContact = rs.getString("InventorContact");
+			 String InventorType = rs.getString("InventorType");
+			 
 			
 }

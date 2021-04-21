@@ -103,4 +103,26 @@ public class FunderService {
 				 + "'>" + "</form></td></tr>";
 				 }
 				 con.close();
+				 
+				// Complete the html table
+				 output += "</table>";
+				 }
+				 catch (Exception e)
+				 {
+				 output = "Error while reading the funders.";
+				 System.err.println(e.getMessage());
+				 }
+				 return output;
+				 }
+				
+				
+				public String updateFunder(String ID, String name, String email, String contact, String type)
+				
+				 {
+				 String output = "";
+				 try
+				 {
+				 Connection con = connect();
+				 if (con == null)
+				 {return "Error while connecting to the database for updating."; }
 	}

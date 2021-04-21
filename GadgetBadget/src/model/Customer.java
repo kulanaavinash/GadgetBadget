@@ -67,8 +67,7 @@ public class Customer {
 		 // Prepare the html table to be displayed
 		 output = "<table border='1'><tr><th>Customer Name</th><th>customer Email</th>" +
 		 "<th>Customer Type</th>" +
-		 "<th>Customer Conatct</th>" +
-		 "<th>Update</th><th>Remove</th></tr>";
+		 "<th>Customer Conatct</th></tr>";
 
 		 String query = "select * from customers";
 		 Statement stmt = con.createStatement();
@@ -88,8 +87,13 @@ public class Customer {
 		 output += "<td>" + CustomerEmail + "</td>";
 		 output += "<td>" +CustomerType + "</td>";
 		 output += "<td>" + CustomerConatct + "</td>";
+		 }
+		 con.close();
 		 
-		 // buttons
+		 output += "</table>";
+		 }
+		 
+		 /*// buttons
 		 
 		 output += "<td><input name='btnUpdate' type='button' value='Update' class='btn btn-secondary'></td>"
 		 + "<td><form method='post' action='items.jsp'>"
@@ -102,6 +106,8 @@ public class Customer {
 		 // Complete the html table
 		 output += "</table>";
 		 }
+		 */
+		 
 		 catch (Exception e)
 		 {
 		 output = "Error while reading the Customers.";

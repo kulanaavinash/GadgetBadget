@@ -92,5 +92,10 @@ public class Product {
 			 String ProductDetails = rs.getString("ProductDetails");
 			 String ProductCategory = rs.getString("ProductCategory");
 			 
-		}
+			 // Add into the html table
+			 output += "<tr><td>" + ProductName + "</td>";
+			 output += "<td>" + ProductDate + "</td>";
+			 output += "<td>" + ProductDetails + "</td>";
+			 output += "<td>" + ProductCategory + "</td>";
+			 
 }

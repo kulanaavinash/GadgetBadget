@@ -4,9 +4,13 @@ import javax.ws.rs.Consumes;
 import javax.ws.rs.FormParam;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
+import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
+
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
 
 import model.Inventor;
 
@@ -33,6 +37,25 @@ public class InventorService {
 	  @FormParam("InventorType") String InventorType)
 	 {
 	  String output = inventorObj.insertInventor(InventorName, InventorEmail,InventorContact, InventorType);
+	 return output;
+	 }
+	 
+
+	 @PUT
+	 @Path("/")
+	 @Consumes(MediaType.APPLICATION_JSON)
+	 @Produces(MediaType.TEXT_PLAIN)
+	 public String updateInventor(String inventorData)
+	 {
+	 //Convert the input string to a JSON object
+	  JsonObject inventorObject = new JsonParser().parse(inventorData).getAsJsonObject();
+	 //Read the values from the JSON object
+	  String InventorID = inventorObject.get("InventorID").getAsString();
+	  String InventorName = inventorObject.get("InventorName").getAsString();
+	  String InventorEmail = inventorObject.get("InventorEmail").getAsString();
+	  String InventorContact = inventorObject.get("InventorContact").getAsString();
+	  String InventorType = inventorObject.get("InventorType").getAsString();
+	  String output = inventorObj.updateInventor(InventorID, InventorName, InventorEmail, InventorContact, InventorType);
 	 return output;
 	 }
 	 

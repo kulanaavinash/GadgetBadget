@@ -125,4 +125,10 @@ public class FunderService {
 				 Connection con = connect();
 				 if (con == null)
 				 {return "Error while connecting to the database for updating."; }
+				 
+				 
+				 // create a prepared statement
+				 String query = " update funders set FunderName= ? , FunderEmail = ? , FunderContact = ? , FunderType = ?  where FunderID = ? ";
+					
+				 PreparedStatement preparedStmt = con.prepareStatement(query);
 	}

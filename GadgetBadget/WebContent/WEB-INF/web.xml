@@ -43,6 +43,19 @@
 </servlet-mapping>
 
 
+
+  
+   <servlet>
+ <servlet-name>Jersey Web Application approve</servlet-name>
+ <servlet-class>com.sun.jersey.spi.container.servlet.ServletContainer</servlet-class>
+ <load-on-startup>1</load-on-startup>
+</servlet>
+<servlet-mapping>
+ <servlet-name>Jersey Web Application approve</servlet-name>
+ <url-pattern>/ApprovementService/*</url-pattern>
+</servlet-mapping>
+
+
  
    <servlet>
  <servlet-name>Jersey Web Application inventor</servlet-name>

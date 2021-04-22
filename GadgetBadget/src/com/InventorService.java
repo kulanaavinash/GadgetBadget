@@ -21,67 +21,61 @@ import model.Inventor;
 
 @Path("/Inventors")
 public class InventorService {
-	
-	
-	//Getmethod
+
+	// Getmethod
 	Inventor inventorObj = new Inventor();
-	 @GET
-	 @Path("/")
-	 @Produces(MediaType.TEXT_HTML)
-	 public String readInventors()
-	  {
-	  return inventorObj.readInventors();
-	  }
-	
-	//Post method
-	 @POST
-	 @Path("/")
-	 @Consumes(MediaType.APPLICATION_FORM_URLENCODED)
-	 @Produces(MediaType.TEXT_PLAIN)
-	 public String insertInventor(@FormParam("InventorName") String InventorName,
-	  @FormParam("InventorEmail") String InventorEmail,
-	  @FormParam("InventorContact") String InventorContact,
-	  @FormParam("InventorType") String InventorType)
-	 {
-	  String output = inventorObj.insertInventor(InventorName, InventorEmail,InventorContact, InventorType);
-	 return output;
-	 }
-	 
-	 
-	 //Put method
-	 @PUT
-	 @Path("/")
-	 @Consumes(MediaType.APPLICATION_JSON)
-	 @Produces(MediaType.TEXT_PLAIN)
-	 public String updateInventor(String inventorData)
-	 {
-	 //Convert the input string to a JSON object
-	  JsonObject inventorObject = new JsonParser().parse(inventorData).getAsJsonObject();
-	 //Read the values from the JSON object
-	  String InventorID = inventorObject.get("InventorID").getAsString();
-	  String InventorName = inventorObject.get("InventorName").getAsString();
-	  String InventorEmail = inventorObject.get("InventorEmail").getAsString();
-	  String InventorContact = inventorObject.get("InventorContact").getAsString();
-	  String InventorType = inventorObject.get("InventorType").getAsString();
-	  String output = inventorObj.updateInventor(InventorID, InventorName, InventorEmail, InventorContact, InventorType);
-	 return output;
-	 }
-	 
 
-	 //Delete Method
-	 @DELETE
-	 @Path("/")
-	 @Consumes(MediaType.APPLICATION_XML)
-	 @Produces(MediaType.TEXT_PLAIN)
-	 public String deleteInventor(String inventorData)
-	 {
-	 //Convert the input string to an XML document
-	  Document doc = Jsoup.parse(inventorData, "", Parser.xmlParser());
+	@GET
+	@Path("/")
+	@Produces(MediaType.TEXT_HTML)
+	public String readInventors() {
+		return inventorObj.readInventors();
+	}
 
-	  //Read the value from the element <itemID>
-	  String InventorID = doc.select("InventorID").text();
-	  String output = inventorObj.deleteInventor(InventorID);
-	 return output;
-	 }
+	// Post method
+	@POST
+	@Path("/")
+	@Consumes(MediaType.APPLICATION_FORM_URLENCODED)
+	@Produces(MediaType.TEXT_PLAIN)
+	public String insertInventor(@FormParam("InventorName") String InventorName,
+			@FormParam("InventorEmail") String InventorEmail, @FormParam("InventorContact") String InventorContact,
+			@FormParam("InventorType") String InventorType) {
+		String output = inventorObj.insertInventor(InventorName, InventorEmail, InventorContact, InventorType);
+		return output;
+	}
+
+	// Put method
+	@PUT
+	@Path("/")
+	@Consumes(MediaType.APPLICATION_JSON)
+	@Produces(MediaType.TEXT_PLAIN)
+	public String updateInventor(String inventorData) {
+		// Convert the input string to a JSON object
+		JsonObject inventorObject = new JsonParser().parse(inventorData).getAsJsonObject();
+		// Read the values from the JSON object
+		String InventorID = inventorObject.get("InventorID").getAsString();
+		String InventorName = inventorObject.get("InventorName").getAsString();
+		String InventorEmail = inventorObject.get("InventorEmail").getAsString();
+		String InventorContact = inventorObject.get("InventorContact").getAsString();
+		String InventorType = inventorObject.get("InventorType").getAsString();
+		String output = inventorObj.updateInventor(InventorID, InventorName, InventorEmail, InventorContact,
+				InventorType);
+		return output;
+	}
+
+	// Delete Method
+	@DELETE
+	@Path("/")
+	@Consumes(MediaType.APPLICATION_XML)
+	@Produces(MediaType.TEXT_PLAIN)
+	public String deleteInventor(String inventorData) {
+		// Convert the input string to an XML document
+		Document doc = Jsoup.parse(inventorData, "", Parser.xmlParser());
+
+		// Read the value from the element <itemID>
+		String InventorID = doc.select("InventorID").text();
+		String output = inventorObj.deleteInventor(InventorID);
+		return output;
+	}
 
 }

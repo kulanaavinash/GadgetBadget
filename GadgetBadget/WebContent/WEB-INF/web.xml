@@ -32,7 +32,7 @@
 </servlet-mapping>
   
   
-   <servlet>
+    <servlet>
  <servlet-name>Jersey Web Application funder</servlet-name>
  <servlet-class>com.sun.jersey.spi.container.servlet.ServletContainer</servlet-class>
  <load-on-startup>1</load-on-startup>

@@ -1,24 +1,22 @@
 package com;
 
+import javax.ws.rs.GET;
+import javax.ws.rs.Path;
+import javax.ws.rs.Produces;
+import javax.ws.rs.core.MediaType;
+
+import model.Approvement;
+
+@Path("/Approvements")
 public class ApprovementService {
 	
-	//DB connection
-	public Connection connect() {
-		Connection con = null;
-
-		try {
-			Class.forName("com.mysql.jdbc.Driver");
-
-			 con= DriverManager.getConnection("jdbc:mysql://localhost:3306/paf_lab_03",
-			 "root", "");
-			 
-			 
-			// For testing
-			System.out.print("Successfully connected"); 
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-
-		return con;
-	}
+	Approvement approvementObj = new Approvement();
+	 @GET
+	 @Path("/")
+	 @Produces(MediaType.TEXT_HTML)
+	 public String readApprovements()
+	  {
+	  return approvementObj.readApprovements();
+	  }
+	 
 }

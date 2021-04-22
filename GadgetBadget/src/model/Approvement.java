@@ -58,5 +58,13 @@ public class Approvement {
 
 					return output;
 				}
+				
+				// insert method
+				public String insertApprovement(String status, String date, String details, String endorser) {
+					Connection con = connect();
+					String output = "";
+					if (con == null) {
+						return "Error while connecting to the database";
+					}
 
 }

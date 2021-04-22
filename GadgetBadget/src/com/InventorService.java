@@ -22,6 +22,8 @@ import model.Inventor;
 @Path("/Inventors")
 public class InventorService {
 	
+	
+	//Getmethod
 	Inventor inventorObj = new Inventor();
 	 @GET
 	 @Path("/")
@@ -31,7 +33,7 @@ public class InventorService {
 	  return inventorObj.readInventors();
 	  }
 	
-	
+	//Post method
 	 @POST
 	 @Path("/")
 	 @Consumes(MediaType.APPLICATION_FORM_URLENCODED)
@@ -45,7 +47,8 @@ public class InventorService {
 	 return output;
 	 }
 	 
-
+	 
+	 //Put method
 	 @PUT
 	 @Path("/")
 	 @Consumes(MediaType.APPLICATION_JSON)
@@ -65,6 +68,7 @@ public class InventorService {
 	 }
 	 
 
+	 //Delete Method
 	 @DELETE
 	 @Path("/")
 	 @Consumes(MediaType.APPLICATION_XML)

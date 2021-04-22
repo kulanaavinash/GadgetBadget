@@ -125,7 +125,12 @@ public class Approvement {
 				 String Endorser = rs.getString("Endorser");
 				 
 				 
-				
+				 // Add into the html table
+				 output += "<tr><td>" + ApproveStatus + "</td>";
+				 output += "<td>" + ApproveDate + "</td>";
+				 output += "<td>" + ApproveDetails + "</td>";
+				 output += "<td>" + Endorser + "</td>";
+				 		
 			
 }
 

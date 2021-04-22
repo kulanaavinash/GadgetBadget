@@ -50,7 +50,7 @@ public class Customer {
 					output = "Error while inserting";
 					System.err.println(e.getMessage());
 				}
-				// binding values
+				
 
 				return output;
 			}
@@ -63,12 +63,11 @@ public class Customer {
 		 {
 		 Connection con = connect();
 		 if (con == null)
-		 {return "Error while connecting to the database for reading."; }
+		 {return "Error while connecting to the database for reading Customers."; }
 		 // Prepare the html table to be displayed
 		 output = "<table border='1'><tr><th>Customer Name</th><th>customer Email</th>" +
 		 "<th>Customer Type</th>" +
-		 "<th>Customer Conatct</th>" +
-		 "<th>Update</th><th>Remove</th></tr>";
+		 "<th>Customer Conatct</th></tr>";
 
 		 String query = "select * from customers";
 		 Statement stmt = con.createStatement();
@@ -88,23 +87,17 @@ public class Customer {
 		 output += "<td>" + CustomerEmail + "</td>";
 		 output += "<td>" +CustomerType + "</td>";
 		 output += "<td>" + CustomerConatct + "</td>";
-		 
-		 // buttons
-		 
-		 output += "<td><input name='btnUpdate' type='button' value='Update' class='btn btn-secondary'></td>"
-		 + "<td><form method='post' action='items.jsp'>"
-		 + "<input name='btnRemove' type='submit' value='Remove' class='btn btn-danger'>"
-		 + "<input name='CustomerID' type='hidden' value='" + CustomerID
-		 + "'>" + "</form></td></tr>";
 		 }
 		 con.close();
 		 
-		 // Complete the html table
 		 output += "</table>";
 		 }
+		 
+		
+		 
 		 catch (Exception e)
 		 {
-		 output = "Error while reading the items.";
+		 output = "Error while reading the Customers.";
 		 System.err.println(e.getMessage());
 		 }
 		 return output;
@@ -163,7 +156,7 @@ public class Customer {
 		 }
 		 catch (Exception e)
 		 {
-		 output = "Error while deleting the item.";
+		 output = "Error while deleting the Customer.";
 		 System.err.println(e.getMessage());
 		 }
 		 return output;

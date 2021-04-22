@@ -72,8 +72,8 @@ public class Payment {
 			 // Prepare the html table to be displayed
 			 output = "<table border='1'><tr><th>Payment Date</th><th>Card Number</th>" +
 			 "<th>Amount</th>" +
-			 "<th>Payment Type</th>" +
-			 "<th>Update</th><th>Remove</th></tr>";
+			 "<th>Payment Type</th></tr>";
+			
 
 			 String query = "select * from payments";
 			 Statement stmt = con.createStatement();
@@ -94,13 +94,7 @@ public class Payment {
 			 output += "<td>" + Amount + "</td>";
 			 output += "<td>" + PaymentType + "</td>";
 			 
-			 // buttons
-			 
-			 output += "<td><input name='btnUpdate' type='button' value='Update' class='btn btn-secondary'></td>"
-			 + "<td><form method='post' action='items.jsp'>"
-			 + "<input name='btnRemove' type='submit' value='Remove' class='btn btn-danger'>"
-			 + "<input name=' PaymentID' type='hidden' value='" + PaymentID
-			 + "'>" + "</form></td></tr>";
+			
 			 }
 			 con.close();
 			 

@@ -4,9 +4,13 @@ import javax.ws.rs.Consumes;
 import javax.ws.rs.FormParam;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
+import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
+
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
 
 import model.Approvement;
 
@@ -36,6 +40,27 @@ public class ApprovementService {
 	  @FormParam("Endorser") String Endorser)
 	 {
 	  String output =approvementObj.insertApprovement(ApproveStatus, ApproveDate,ApproveDetails, Endorser);
+	 return output;
+	 }
+
+	 
+	 
+	 
+	 @PUT
+	 @Path("/")
+	 @Consumes(MediaType.APPLICATION_JSON)
+	 @Produces(MediaType.TEXT_PLAIN)
+	 public String updateProduct(String approvementData)
+	 {
+	 //Convert the input string to a JSON object
+	  JsonObject productObject = new JsonParser().parse(approvementData).getAsJsonObject();
+	 //Read the values from the JSON object
+	  String ApproveID = productObject.get("ApproveID").getAsString();
+	  String ApproveStatus = productObject.get("ApproveStatus").getAsString();
+	  String ApproveDate = productObject.get("ApproveDate").getAsString();
+	  String ApproveDetails = productObject.get("ApproveDetails").getAsString();
+	  String Endorser = productObject.get("Endorser").getAsString();
+	  String output = approvementObj.updateApprovement(ApproveID, ApproveStatus, ApproveDate, ApproveDetails, Endorser);
 	 return output;
 	 }
 	 

@@ -176,6 +176,20 @@ public class Approvement {
 				 preparedStmt.setString(3, details);
 				 preparedStmt.setString(4, endorser);
 				 preparedStmt.setInt(5, Integer.parseInt(ID));
+				 
+				 
+				 // execute the statement
+				 preparedStmt.execute();
+				 con.close();
+				 output = "Updated successfully";
+				 }
+				 catch (Exception e)
+				 {
+				 output = "Error while updating the product.";
+				 System.err.println(e.getMessage());
+				 }
+				 return output;
+				 }
 }
 
 

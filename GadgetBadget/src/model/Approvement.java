@@ -66,5 +66,33 @@ public class Approvement {
 					if (con == null) {
 						return "Error while connecting to the database";
 					}
+					
+					// create a prepared statement
+					String query = " insert into approvements (`ApproveID`,`ApproveStatus`,`ApproveDate`,`ApproveDetails`,`Endorser`)"
+							+ " values (?, ?, ?, ?, ?)";
+					PreparedStatement preparedStmt;
+					try {
+						preparedStmt = con.prepareStatement(query);
+
+						preparedStmt.setInt(1, 0);
+						preparedStmt.setString(2, status);
+						preparedStmt.setString(3, date);
+						preparedStmt.setString(4, details);
+						preparedStmt.setString(5, endorser);
+
+						preparedStmt.execute();
+						con.close();
+						output = "Inserted successfully";
+						
+					} catch (SQLException e) {
+						output = "Error while inserting";
+						System.err.println(e.getMessage());
+					}
+					
+					
+
+					return output;
+				}
+
 
 }

@@ -140,6 +140,17 @@ public class Approvement {
 				 + "'>" + "</form></td></tr>";
 				 }
 				 con.close();
+				 
+				 // Complete the html table
+				 output += "</table>";
+				 }
+				 catch (Exception e)
+				 {
+				 output = "Error while reading the Approvements .";
+				 System.err.println(e.getMessage());
+				 }
+				 return output;
+				 }
 }
 
 

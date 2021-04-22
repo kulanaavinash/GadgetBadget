@@ -168,6 +168,14 @@ public class Approvement {
 				 String query = " update approvements set ApproveStatus= ? , ApproveDate = ? , ApproveDetails = ? , Endorser = ?  where ApproveID = ? ";
 					
 				 PreparedStatement preparedStmt = con.prepareStatement(query);
+				 
+				 
+				// binding values
+				 preparedStmt.setString(1, status);
+				 preparedStmt.setString(2, date);
+				 preparedStmt.setString(3, details);
+				 preparedStmt.setString(4, endorser);
+				 preparedStmt.setInt(5, Integer.parseInt(ID));
 }
 
 

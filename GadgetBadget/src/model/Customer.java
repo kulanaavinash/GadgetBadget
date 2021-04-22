@@ -50,7 +50,7 @@ public class Customer {
 					output = "Error while inserting";
 					System.err.println(e.getMessage());
 				}
-				// binding values
+				
 
 				return output;
 			}

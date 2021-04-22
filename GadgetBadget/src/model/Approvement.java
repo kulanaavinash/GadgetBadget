@@ -131,7 +131,15 @@ public class Approvement {
 				 output += "<td>" + ApproveDetails + "</td>";
 				 output += "<td>" + Endorser + "</td>";
 				 		
-			
+				// buttons
+				 
+				 output += "<td><input name='btnUpdate' type='button' value='Update' class='btn btn-secondary'></td>"
+				 + "<td><form method='post' action='items.jsp'>"
+				 + "<input name='btnRemove' type='submit' value='Remove' class='btn btn-danger'>"
+				 + "<input name='ApproveID' type='hidden' value='" + ApproveID
+				 + "'>" + "</form></td></tr>";
+				 }
+				 con.close();
 }
 
 

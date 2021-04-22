@@ -3,7 +3,9 @@ package model;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 
 public class Approvement {
 
@@ -93,6 +95,42 @@ public class Approvement {
 
 					return output;
 				}
+				
+			
 
+				public String readApprovements()
+				 {
+				 String output = "";
+				 try
+				 {
+				 Connection con = connect();
+				 if (con == null)
+				 {return "Error while connecting to the database for reading."; }
+				 // Prepare the html table to be displayed
+				 output = "<table border='1'><tr><th>Approve Status</th><th>Approve Date</th>" +
+				 "<th>Approve Details</th>" +
+				 "<th> Endorser Type</th>" +
+				 "<th>Update</th><th>Remove</th></tr>";
 
+				 String query = "select * from approvements";
+				 Statement stmt = con.createStatement();
+				 ResultSet rs = stmt.executeQuery(query);
+				 // iterate through the rows in the result set
+				 while (rs.next())
+				 {
+				 String ApproveID = Integer.toString(rs.getInt("ApproveID"));
+				 String ApproveStatus = rs.getString("ApproveStatus");
+				 String ApproveDate = rs.getString("ApproveDate");
+				 String ApproveDetails = rs.getString("ApproveDetails");
+				 String Endorser = rs.getString("Endorser");
+				 
+				 
+				
+			
 }
+
+
+
+
+
+

@@ -151,6 +151,23 @@ public class Approvement {
 				 }
 				 return output;
 				 }
+				
+				
+				public String updateApprovement(String ID, String status, String date, String details, String endorser)
+				
+				 {
+				 String output = "";
+				 try
+				 {
+				 Connection con = connect();
+				 if (con == null)
+				 {return "Error while connecting to the database for updating."; }
+				 // create a prepared statement
+				 
+				 
+				 String query = " update approvements set ApproveStatus= ? , ApproveDate = ? , ApproveDetails = ? , Endorser = ?  where ApproveID = ? ";
+					
+				 PreparedStatement preparedStmt = con.prepareStatement(query);
 }
 
 

@@ -67,8 +67,8 @@ public class Product {
 				return "Error while connecting to the database for reading.";
 			}
 			// Prepare the html table to be displayed
-			output = "<table border='1'><tr><th>Product Name</th><th>Product Email</th>" + "<th>Product Contact</th>"
-					+ "<th>Product Type</th>" + "<th>Update</th><th>Remove</th></tr>";
+			output = "<table border='1'><tr><th>Product Name</th><th>Product Date</th>" + "<th>Product Deatils</th>"
+					+ "<th>Product Category</th></tr>";
 
 			String query = "select * from products";
 			Statement stmt = con.createStatement();
@@ -88,12 +88,6 @@ public class Product {
 				output += "<td>" + ProductDetails + "</td>";
 				output += "<td>" + ProductCategory + "</td>";
 
-				// buttons
-
-				output += "<td><input name='btnUpdate' type='button' value='Update' class='btn btn-secondary'></td>"
-						+ "<td><form method='post' action='items.jsp'>"
-						+ "<input name='btnRemove' type='submit' value='Remove' class='btn btn-danger'>"
-						+ "<input name='ProductID' type='hidden' value='" + ProductID + "'>" + "</form></td></tr>";
 			}
 			con.close();
 

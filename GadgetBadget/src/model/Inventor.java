@@ -67,7 +67,7 @@ public class Inventor {
 			}
 			// Prepare the html table to be displayed
 			output = "<table border='1'><tr><th>Inventor Name</th><th>Inventor Email</th>" + "<th>Inventor Contact</th>"
-					+ "<th>Inventor Type</th>" + "<th>Update</th><th>Remove</th></tr>";
+					+ "<th>Inventor Type</th></tr>";
 
 			String query = "select * from inventors";
 			Statement stmt = con.createStatement();
@@ -87,12 +87,6 @@ public class Inventor {
 				output += "<td>" + InventorContact + "</td>";
 				output += "<td>" + InventorType + "</td>";
 
-				// buttons
-
-				output += "<td><input name='btnUpdate' type='button' value='Update' class='btn btn-secondary'></td>"
-						+ "<td><form method='post' action='items.jsp'>"
-						+ "<input name='btnRemove' type='submit' value='Remove' class='btn btn-danger'>"
-						+ "<input name='InventorID' type='hidden' value='" + InventorID + "'>" + "</form></td></tr>";
 			}
 			con.close();
 

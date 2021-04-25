@@ -11,6 +11,9 @@ java JAX-RS(jersy) Restful web service on Apache  Tomcat  mysql as the database 
 # How to execute the project?
 Import the gadgetbadget DB then clone the project and after it become cloned by using apache tomcat server the project can be executed.
 
+#  Link  To GadgetBadget Database
+https://github.com/kulanaavinash/GadgetBadget/blob/master/gadgetbadget%20DB.sql
+
 
 # How to set the path?
 http://localhost:8090/GadgetBadget/CustomerService/Customers            -- For Customer Function
@@ -30,10 +33,13 @@ http://localhost:8090/GadgetBadget/ApprovementService/Approvements      --For Ap
 #  collaborators
 
 
-Avinash W.V. K          --IT19091426
-Ganepola A.M.T. G       --IT19117942
-Wijerathne P.S. A       --IT19126784
-Jayasundara J.M.N.K. B  --IT19117010
+-  Avinash W.V. K          --IT19091426
+-  Ganepola A.M.T. G       --IT19117942
+-  Wijerathne P.S. A       --IT19126784
+-  Jayasundara J.M.N.K. B  --IT19117010
+
+
+
 
 
 

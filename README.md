@@ -15,6 +15,10 @@ Import the gadgetbadget DB then clone the project and after it become cloned by 
 https://github.com/kulanaavinash/GadgetBadget/blob/master/gadgetbadget%20DB.sql
 
 
+#  Link  To Project  Report
+https://github.com/kulanaavinash/GadgetBadget/blob/186eb4e1c6daeb5fe1cf35f8b2d304aa6c1f4c7e/Project%20Reports/IT3030PAF2021_Gadgetbadget_Group08.pdf
+
+
 # How to set the path?
 http://localhost:8090/GadgetBadget/CustomerService/Customers            -- For Customer Function
 
